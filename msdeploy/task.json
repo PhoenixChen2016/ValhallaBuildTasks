@@ -1,0 +1,41 @@
+{
+    "id": "5130bc90-daf5-11e6-b533-215683b85698",
+    "name": "msdeploy",
+    "friendlyName": "MSDeploy",
+    "description": "執行MSDeploy",
+    "author": "Phoenix",
+    "helpMarkDown": "Replace with markdown to show in help",
+    "category": "Deploy",
+    "visibility": [
+        "Build",
+        "Release"
+    ],
+    "demands": [],
+    "version": {
+        "Major": "0",
+        "Minor": "0",
+        "Patch": "1"
+    },
+    "minimumAgentVersion": "1.95.0",
+    "instanceNameFormat": "執行MSDeploy",
+    "inputs": [{
+        "name": "verb",
+        "type": "string",
+        "label": "Verb",
+        "defaultValue": "sync",
+        "required": true,
+        "helpMarkDown": "設定Verb：sync、dump、delete"
+    }, {
+        "name": "otherArgs",
+        "type": "multiline",
+        "label": "Other Args",
+        "defaultValue": "",
+        "required": true,
+        "helpMarkDown": "msdeploy執行的參數"
+    }],
+    "execution": {
+        "PowerShell3": {
+            "target": "MSDeployExecute.ps1"
+        }
+    }
+}

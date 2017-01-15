@@ -1,0 +1,37 @@
+{
+    "manifestVersion": 1,
+    "id": "valhalla-build-tasks",
+    "name": "Valhalla Build Tasks",
+    "version": "0.0.1",
+    "publisher": "Phoenix",
+    "public": true,
+    "targets": [{
+        "id": "Microsoft.VisualStudio.Services"
+    }],
+    "description": "Build Tasks",
+    "categories": [
+        "Build and release"
+    ],
+    "icons": {
+        "default": "icon-bundle.png"
+    },
+    "tags": [
+        "Valhalla"
+    ],
+    "branding": {
+        "theme": "light"
+    },
+    "files": [{
+        "path": "msdeploy"
+    }],
+    "contributions": [{
+        "id": "msdeploy",
+        "type": "ms.vss-distributed-task.task",
+        "targets": [
+            "ms.vss-distributed-task.tasks"
+        ],
+        "properties": {
+            "name": "msdeploy"
+        }
+    }]
+}
