@@ -38,7 +38,7 @@ gulp.task("clean", function() {
     return gulp
         .src([
             "*.vsix",
-            "*/ps_modules/**/*"
+            "*/ps_modules"
         ])
         .pipe(vinylPaths(del));
 });
