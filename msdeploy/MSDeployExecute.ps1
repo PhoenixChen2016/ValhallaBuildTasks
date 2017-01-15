@@ -6,14 +6,14 @@ try {
     Import-VstsLocStrings "$PSScriptRoot\task.json"
 
     [string]$verb = Get-VstsInput -Name verb
-    [string]$otherArgs = Get-VstsInput -Name otherArgs
+	[string[]]$otherArgs = (Get-VstsInput -Name otherArgs).Spilt("`n");
 
     [System.Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
     $tempFile = [guid]::NewGuid()
     $hasError = $false
 
-    & "$PSScriptRoot\MSDeploy.cmd" "-verb:$verb $otherArgs" "2>>$tempFile.error" | Out-Host
+    & "$PSScriptRoot\MSDeploy.cmd" -verb:$verb $otherArgs "2>>$tempFile.error" | Out-Host
 
     gc "$tempFile.error" -Encoding UTF8 | %{
         $hasError = $true
