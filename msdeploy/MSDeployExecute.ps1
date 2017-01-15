@@ -6,7 +6,7 @@ try {
     Import-VstsLocStrings "$PSScriptRoot\task.json"
 
     [string]$verb = Get-VstsInput -Name verb
-	[string[]]$otherArgs = (Get-VstsInput -Name otherArgs).Spilt("`n");
+	[string[]]$otherArgs = (Get-VstsInput -Name otherArgs).Split("`n");
 
     [System.Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
