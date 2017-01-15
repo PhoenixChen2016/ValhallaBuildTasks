@@ -27,7 +27,7 @@
         "helpMarkDown": "設定Verb：sync、dump、delete"
     }, {
         "name": "otherArgs",
-        "type": "multiline",
+        "type": "multiLine",
         "label": "Other Args",
         "defaultValue": "",
         "required": true,

@@ -4,16 +4,16 @@ param()
 Trace-VstsEnteringInvocation $MyInvocation
 try {
     Import-VstsLocStrings "$PSScriptRoot\task.json"
-    
+
     [string]$verb = Get-VstsInput -Name verb
-    [string]$content = Get-VstsInput -Name content
+    [string]$otherArgs = Get-VstsInput -Name otherArgs
 
     [System.Console]::OutputEncoding = [System.Text.Encoding]::UTF8
-    
+
     $tempFile = [guid]::NewGuid()
     $hasError = $false
 
-    & "$PSScriptRoot\MSDeploy.cmd" "-verb:$verb $content" "2>>$tempFile.error" | Out-Host
+    & "$PSScriptRoot\MSDeploy.cmd" "-verb:$verb $otherArgs" "2>>$tempFile.error" | Out-Host
 
     gc "$tempFile.error" -Encoding UTF8 | %{
         $hasError = $true
