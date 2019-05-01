@@ -12,7 +12,7 @@
         "del": "^2.2.2",
         "gulp-json-editor": "^2.2.1",
         "gulp-shell": "^0.5.2",
-        "gulp4": "^4.0.2",
+        "gulp4": "^4.0.3",
         "vinyl-paths": "^2.1.0",
         "vsts-task-sdk": "^0.6.4"
     }
